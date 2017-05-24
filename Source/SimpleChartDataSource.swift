@@ -8,14 +8,13 @@
 
 import Foundation
 
-
 /**
  Convenience implementation of `ChartDataSource` that can be initialized with a `[Number]` and will create segments
  */
 open class NumberChartDataSource: ChartDataSource {
   open var segments: [ChartSegment]
   open var maxValue: Double
-  
+
   /**
    Designated initializer for `NumberChartDataSource`
    

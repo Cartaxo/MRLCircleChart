@@ -32,30 +32,30 @@ import UIKit
  */
 @objc
 open class Chart: UIView {
-  
-  //MARK: - Public Handlers
-  
-  public typealias SelectionHandler = (Int) -> ()
-  
+
+  // MARK: - Public Handlers
+
+  public typealias SelectionHandler = (Int) -> Void
+
   /**
    Ran when user selects a layer via touch interaction.
    */
   open var selectHandler: SelectionHandler = {index in }
-  
+
   /**
    Ran when a segment is deselected as a result of direct touch interaction
    */
   open var deselectHandler: SelectionHandler = {index in }
-  
-  //MARK: - Public variables
-  
+
+  // MARK: - Public variables
+
   /**
    `ChartDataSource` providing reference items and angle calulations for `Chart`'s segments
    */
   open var dataSource: ChartDataSource?
-  
-  //MARK: - Public Inspectables
-  
+
+  // MARK: - Public Inspectables
+
   // Width of the `Chart`'s segments
   @IBInspectable open var lineWidth: CGFloat = 25
   // `Chart`'s inner padding if you need to make it smaller than it's bounds
@@ -66,16 +66,18 @@ open class Chart: UIView {
   @IBInspectable open var beginColor: UIColor?
   // Color for `Chart`'s last segment
   @IBInspectable open var endColor: UIColor?
-  
-  //MARK: - Private variables
-  
+
+  // MARK: - Private variables
+
   fileprivate var chartBackgroundSegment: ChartSegmentLayer?
   fileprivate var chartSegmentLayers: [ChartSegmentLayer] = []
+  /// <#Description#>
   fileprivate var colorPalette: [UIColor] = []
+  /// Control's `Chart's` segment behavior on selection
   fileprivate var selectionStyle: SegmentSelectionStyle = .grow
-  
-  //MARK: - Initializers
-  
+
+  // MARK: - Initializers
+
   /**
    Default initializer for ChartView, provides most of the customization points
    
@@ -102,24 +104,24 @@ open class Chart: UIView {
     self.dataSource = dataSource
     self.beginColor = beginColor
     self.endColor = endColor
-    
+
     super.init(frame: frame)
   }
-  
+
   public required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
   }
-  
-  //MARK: - Public Overrides
-  
+
+  // MARK: - Public Overrides
+
   override open func layoutSubviews() {
     super.layoutSubviews()
     updateSegmentsBounds()
     setupBackgroundSegmentIfNeeded()
   }
-  
-  //MARK: - Setup
-  
+
+  // MARK: - Setup
+
   /**
    Updates individual layer positoins according to bounds changes
    */
@@ -128,7 +130,7 @@ open class Chart: UIView {
       layer.frame = bounds.largestSquareThatFits()
     }
   }
-  
+
   /**
    Sets up background segment if needed
    */
@@ -141,51 +143,51 @@ open class Chart: UIView {
       chartBackgroundSegment = backgroundSegment
     }
   }
-  
+
   /**
-   Setups `colorPalette` based on `beginColor` and `endColor`.
+   Sets `colorPalette` up based on `beginColor` and `endColor`.
    */
   fileprivate func setupColorPalettes() {
-    
+
     guard let source = dataSource else {
       return
     }
-    
+
     colorPalette = UIColor.colorRange(
       beginColor: beginColor!,
       endColor: endColor!,
       count: source.numberOfItems()
     )
   }
-  
+
   /**
    Querries the `dataSource` for data and inserts, removes, or updates all relevant segments.
    
    - parameter animated: specifies whether the operation will be animated, defaults to `true`
    - parameter completion: optional completion block, defaults to `{}`
    */
-  final public func reloadData(animated: Bool = true, completion: @escaping () -> () = {}) {
+  final public func reloadData(animated: Bool = true, completion: @escaping () -> Void = {}) {
     guard let source = dataSource else {
       return
     }
-    
+
     setupColorPalettes()
-    
+
     let refNumber = max(source.numberOfItems(), chartSegmentLayers.count)
-    
+
     var indexesToRemove: [Int] = []
-    
+
     CATransaction.begin()
     CATransaction.setCompletionBlock(completion)
     CATransaction.setDisableActions(!animated)
-    
+
     for index in 0..<refNumber {
-      
+
       guard let _ = source.item(at: index) else {
         indexesToRemove.append(index)
         continue
       }
-      
+
       guard let layer = layer(at: index) else {
         let layer = ChartSegmentLayer(
           frame: self.bounds.largestSquareThatFits(),
@@ -197,45 +199,45 @@ open class Chart: UIView {
         )
         self.layer.insertSublayer(layer, at: 1)
         chartSegmentLayers.append(layer)
-        
+
         if animated {
           layer.animateInsertion(
             source.isFullCircle() ? 0 : source.startAngle(for: index),
             endAngle: source.isFullCircle() ? 0 : .pi * 2
           )
         }
-        
+
         continue
       }
-      
+
       layer.startAngle = source.startAngle(for: index)
       layer.endAngle = source.endAngle(for: index)
       layer.color = colorPalette[index].cgColor
       layer.lineWidth = lineWidth
       layer.padding = padding
     }
-    
+
     for index in indexesToRemove.reversed() {
       guard let layer = layer(at: index) else {
         continue
       }
-      
+
       CATransaction.begin()
       CATransaction.setCompletionBlock({
         layer.removeFromSuperlayer()
       })
-      
+
       layer.startAngle = 0
       layer.endAngle = 0
-      
+
       chartSegmentLayers.remove(at: index)
       CATransaction.commit()
     }
-    
+
     reassignSegmentLayerscapTypes()
     CATransaction.commit()
   }
-  
+
   /**
    Empties the `dataSource` and reloadsData() to clear all segments. Animates changes by default.
    */
@@ -243,28 +245,28 @@ open class Chart: UIView {
     guard var source = dataSource else {
       return
     }
-    
+
     if let layerColor = color {
       for layer in chartSegmentLayers {
         layer.color = layerColor.cgColor
       }
     }
-    
+
     source.empty()
     reloadData(animated: animated)
   }
-  
-  //MARK: - Layer manipulation
-  
+
+  // MARK: - Layer manipulation
+
   /**
    Loops through the available layers and assigns them appropriate end cap type
    */
   fileprivate func reassignSegmentLayerscapTypes() {
-    
+
     guard let source = dataSource else {
       return
     }
-    
+
     for (index, segment) in chartSegmentLayers.enumerated() {
       if source.isFullCircle() {
         segment.capType = .none
@@ -282,7 +284,7 @@ open class Chart: UIView {
       }
     }
   }
-  
+
   /**
    Returns a `ChartSegmentLayer?` for a given index
    
@@ -297,7 +299,7 @@ open class Chart: UIView {
       return chartSegmentLayers[index]
     }
   }
-  
+
   /**
    Removes the layer at a given index
    
@@ -306,11 +308,11 @@ open class Chart: UIView {
    should be animated
    */
   fileprivate func remove(_ index: Int, startAngle: CGFloat = .pi * 2, endAngle: CGFloat = .pi * 2, animated: Bool = true) {
-    
+
     guard let layer = layer(at: index) else {
       return
     }
-    
+
     if animated {
       layer.animateRemoval(startAngle: startAngle, endAngle: endAngle, completion: {
         self.reassignSegmentLayerscapTypes()
@@ -320,9 +322,9 @@ open class Chart: UIView {
       reassignSegmentLayerscapTypes()
     }
   }
-  
-  //MARK: - Touches
-  
+
+  // MARK: - Touches
+
   /**
    Utility function enabling manual segment selection from your code.
    
@@ -331,11 +333,11 @@ open class Chart: UIView {
    - parameter selectIndex: index to select
    */
   open func select(index selectIndex: Int) {
-    
+
     if chartSegmentLayers.count == 0 {
       return
     }
-    
+
     if let _ = layer(at: selectIndex) {
       switch selectionStyle {
       case .none:
@@ -349,8 +351,7 @@ open class Chart: UIView {
       }
     }
   }
-  
-  
+
   /**
    Utility function enabling segment deselection from your code.
    
@@ -362,7 +363,7 @@ open class Chart: UIView {
     if chartSegmentLayers.count == 0 {
       return
     }
-    
+
     if let layer = layer(at: index) {
       switch selectionStyle {
       case .none:
@@ -374,7 +375,7 @@ open class Chart: UIView {
       }
     }
   }
-  
+
   fileprivate func selected() -> Int? {
     for (index, layer) in chartSegmentLayers.enumerated() {
       if layer.selected {
@@ -383,15 +384,15 @@ open class Chart: UIView {
     }
     return nil
   }
-  
+
   open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
     guard let touch = touches.first,
       let firstLayer = chartSegmentLayers.first else {
         return
     }
-    
+
     let point = firstLayer.convert(touch.location(in: self), from: self.layer)
-    
+
     for (index, layer) in chartSegmentLayers.enumerated() {
       if layer.contains(point) {
         if layer.selected {
