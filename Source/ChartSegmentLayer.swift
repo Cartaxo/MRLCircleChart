@@ -115,6 +115,10 @@ class ChartSegmentLayer: CALayer {
     self.commonInit()
   }
 
+  override convenience init() {
+    self.init(frame: .zero, start: 0, end: 0, lineWidth: 0, padding: 0, color: UIColor.clear.cgColor)
+  }
+
   override init(layer: Any) {
     super.init(layer: layer)
     self.commonInit()

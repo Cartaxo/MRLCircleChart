@@ -188,33 +188,26 @@ open class Chart: UIView {
         continue
       }
 
-      guard let layer = layer(at: index) else {
-        let layer = ChartSegmentLayer(
-          frame: self.bounds.largestSquareThatFits(),
-          start: source.startAngle(for: index),
-          end: source.endAngle(for: index),
-          lineWidth: lineWidth,
-          padding: padding,
-          color: colorPalette[index].cgColor
-        )
-        self.layer.insertSublayer(layer, at: 1)
-        chartSegmentLayers.append(layer)
+      let layer = self.layer(at: index) ?? ChartSegmentLayer()
 
-        if animated {
-          layer.animateInsertion(
-            source.isFullCircle() ? 0 : source.startAngle(for: index),
-            endAngle: source.isFullCircle() ? 0 : .pi * 2
-          )
-        }
-
-        continue
-      }
-
+      layer.frame = bounds.largestSquareThatFits()
       layer.startAngle = source.startAngle(for: index)
       layer.endAngle = source.endAngle(for: index)
       layer.color = colorPalette[index].cgColor
       layer.lineWidth = lineWidth
       layer.padding = padding
+
+      if self.layer(at: index) == nil {
+        self.layer.insertSublayer(layer, at: 1)
+        chartSegmentLayers.append(layer)
+
+        if animated {
+          layer.animateInsertion(
+            source.isFullCircle() ? .pi * 2 : max(0, source.startAngle(for: index - 1)),
+            endAngle: source.isFullCircle() ? .pi * 2 : max(0, source.endAngle(for: index - 1))
+          )
+        }
+      }
     }
 
     for index in indexesToRemove.reversed() {
@@ -227,8 +220,8 @@ open class Chart: UIView {
         layer.removeFromSuperlayer()
       })
 
-      layer.startAngle = 0
-      layer.endAngle = 0
+      layer.startAngle = dataSource?.endAngle() ?? 0
+      layer.endAngle = dataSource?.endAngle() ?? 0
 
       chartSegmentLayers.remove(at: index)
       CATransaction.commit()
