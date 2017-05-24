@@ -109,7 +109,7 @@ extension ChartDataSource {
    */
   @discardableResult
   public mutating func remove(at index: Int) -> ChartSegment? {
-    guard let _ = item(at: index) else {
+    guard item(at: index) != nil else {
       return nil
     }
     return segments.remove(at: index)
@@ -168,7 +168,7 @@ extension ChartDataSource {
    - returns: CGFloat start angle of the segment or 0 if no segment found
    */
   func startAngle(for index: Int) -> CGFloat {
-    guard let _ = item(at: index), maxValue() > 0 else {
+    guard item(at: index) != nil, maxValue() > 0 else {
       return 0
     }
 

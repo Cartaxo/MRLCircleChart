@@ -183,7 +183,7 @@ open class Chart: UIView {
 
     for index in 0..<refNumber {
 
-      guard let _ = source.item(at: index) else {
+      guard source.item(at: index) != nil else {
         indexesToRemove.append(index)
         continue
       }
@@ -338,7 +338,7 @@ open class Chart: UIView {
       return
     }
 
-    if let _ = layer(at: selectIndex) {
+    if layer(at: selectIndex) != nil {
       switch selectionStyle {
       case .none:
         break
@@ -377,10 +377,8 @@ open class Chart: UIView {
   }
 
   fileprivate func selected() -> Int? {
-    for (index, layer) in chartSegmentLayers.enumerated() {
-      if layer.selected {
-        return index
-      }
+    for (index, layer) in chartSegmentLayers.enumerated() where layer.selected {
+      return index
     }
     return nil
   }
