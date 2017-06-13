@@ -84,29 +84,14 @@ class ViewController: UIViewController {
   }
 
   @IBAction func addButtonTapped(_ sender: UIButton) {
-
-    sender.isEnabled = false
-
-    let value: Double = Double(arc4random() % 75  + 25)
+    let value = Double(arc4random() % 75  + 25)
     dataSource.append(ChartSegment(value: value, description: "value: \(value)"))
-
-    chart.reloadData {
-      sender.isEnabled = true
-    }
+    chart.reloadData()
   }
 
   @IBAction func removeButtonTapped(_ sender: UIButton) {
-
-    guard dataSource.numberOfItems() > 0 else {
-      return
-    }
-
-    sender.isEnabled = false
-
+    guard !dataSource.segments.isEmpty else { return }
     _ = dataSource.remove(at: dataSource.numberOfItems() - 1)
-    chart.reloadData {
-      sender.isEnabled = true
-    }
-
+    chart.reloadData()
   }
 }

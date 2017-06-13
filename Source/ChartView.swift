@@ -147,7 +147,7 @@ open class Chart: UIView {
   /**
    Sets `colorPalette` up based on `beginColor` and `endColor`.
    */
-  fileprivate func setupColorPalettes() {
+  fileprivate func setupColorPalettes(for numberOfItems: Int) {
 
     guard let source = dataSource else {
       return
@@ -156,7 +156,7 @@ open class Chart: UIView {
     colorPalette = UIColor.colorRange(
       beginColor: beginColor!,
       endColor: endColor!,
-      count: source.numberOfItems()
+      count: numberOfItems
     )
   }
 
@@ -171,64 +171,62 @@ open class Chart: UIView {
       return
     }
 
-    setupColorPalettes()
+    setupColorPalettes(for: source.numberOfItems())
 
-    let refNumber = max(source.numberOfItems(), chartSegmentLayers.count)
+    let indicesToAdd: [Int] = source.segments
+      .enumerated()
+      .map { $0.offset }
+      .filter { !chartSegmentLayers.indices.contains($0) }
 
-    var indexesToRemove: [Int] = []
+    let indicesToRemove: [Int] = chartSegmentLayers
+      .enumerated()
+      .map { $0.offset }
+      .filter { !source.segments.indices.contains($0) }
 
     CATransaction.begin()
     CATransaction.setCompletionBlock(completion)
     CATransaction.setDisableActions(!animated)
 
-    for index in 0..<refNumber {
-
-      guard source.item(at: index) != nil else {
-        indexesToRemove.append(index)
-        continue
-      }
-
-      let layer = self.layer(at: index) ?? ChartSegmentLayer()
-
-      layer.frame = bounds.largestSquareThatFits()
-      layer.startAngle = source.startAngle(for: index)
-      layer.endAngle = source.endAngle(for: index)
-      layer.color = colorPalette[index].cgColor
-      layer.lineWidth = lineWidth
-      layer.padding = padding
-
-      if self.layer(at: index) == nil {
-        self.layer.insertSublayer(layer, at: 1)
-        chartSegmentLayers.append(layer)
-
-        if animated {
-          layer.animateInsertion(
-            source.isFullCircle() ? .pi * 2 : max(0, source.startAngle(for: index - 1)),
-            endAngle: source.isFullCircle() ? .pi * 2 : max(0, source.endAngle(for: index - 1))
-          )
-        }
-      }
+    for index in 0..<min(source.numberOfItems(), chartSegmentLayers.count) {
+      configure(layer(at: index), at: index)
     }
 
-    for index in indexesToRemove.reversed() {
-      guard let layer = layer(at: index) else {
-        continue
-      }
-
-      CATransaction.begin()
-      CATransaction.setCompletionBlock({
-        layer.removeFromSuperlayer()
-      })
-
-      layer.startAngle = dataSource?.endAngle() ?? 0
-      layer.endAngle = dataSource?.endAngle() ?? 0
-
-      chartSegmentLayers.remove(at: index)
-      CATransaction.commit()
-    }
-
-    reassignSegmentLayerscapTypes()
     CATransaction.commit()
+
+    insertLayers(at: indicesToAdd, animated: animated)
+    removeLayers(at: indicesToRemove)
+  }
+
+  private func configure(_ layer: ChartSegmentLayer?, at index: Int) {
+    guard let layer = layer, let source = dataSource else { return }
+
+    layer.frame = bounds.largestSquareThatFits()
+    layer.startAngle = source.startAngle(for: index)
+    layer.endAngle = source.endAngle(for: index)
+    layer.color = colorPalette[index].cgColor
+    layer.lineWidth = lineWidth
+    layer.padding = padding
+  }
+
+  private func insertLayers(at indices: [Int], animated: Bool = true) {
+    let startingAngleForInsertion = chartSegmentLayers.last?.endAngle ?? 0
+
+    for index in indices {
+      let newLayer = ChartSegmentLayer()
+      configure(newLayer, at: index)
+      layer.insertSublayer(newLayer, at: 1)
+      chartSegmentLayers.append(newLayer)
+      if animated {
+        newLayer.animateInsertion(0, endAngle: startingAngleForInsertion)
+        reassignSegmentLayerscapTypes()
+      }
+    }
+  }
+
+  private func removeLayers(at indices: [Int]) {
+    for index in indices.reversed() {
+      remove(index)
+    }
   }
 
   /**
@@ -300,19 +298,14 @@ open class Chart: UIView {
    - parameter animated: defaults to `true`, specifies whether the removal
    should be animated
    */
-  fileprivate func remove(_ index: Int, startAngle: CGFloat = .pi * 2, endAngle: CGFloat = .pi * 2, animated: Bool = true) {
-
-    guard let layer = layer(at: index) else {
-      return
-    }
-
+  private func remove(_ index: Int, startAngle: CGFloat = .pi * 2, endAngle: CGFloat = .pi * 2, animated: Bool = true) {
+    guard let layer = layer(at: index) else { return }
+    chartSegmentLayers.remove(at: index)
+    self.reassignSegmentLayerscapTypes()
     if animated {
-      layer.animateRemoval(startAngle: startAngle, endAngle: endAngle, completion: {
-        self.reassignSegmentLayerscapTypes()
-      })
+      layer.animateRemoval()
     } else {
       layer.removeFromSuperlayer()
-      reassignSegmentLayerscapTypes()
     }
   }
 

@@ -226,15 +226,19 @@ class ChartSegmentLayer: CALayer {
    * `removeFromSuperlayer` when the animation completes, and provides a
    * `completion` closure that is run after the `removeFromSuperlayer` call.
    */
-  func animateRemoval(startAngle exitingStartAngle: CGFloat, endAngle exitingEndAngle: CGFloat, completion: @escaping () -> Void) {
+  func animateRemoval(completion: @escaping () -> Void = { }) {
+
+    let duration = CFTimeInterval(endAngle / (endAngle - startAngle) * CGFloat(animationDuration))
+
     CATransaction.begin()
+    CATransaction.setAnimationDuration(duration)
     CATransaction.setCompletionBlock({
       self.removeFromSuperlayer()
       completion()
     })
 
-    self.startAngle = exitingStartAngle
-    self.endAngle = exitingEndAngle
+    startAngle = 0
+    endAngle = 0
 
     CATransaction.commit()
   }
