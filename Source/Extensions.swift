@@ -28,7 +28,7 @@ extension CGRect {
   func center() -> CGPoint {
     return CGPoint(x: size.width / 2, y: size.height / 2)
   }
-  
+
   func largestSquareThatFits() -> CGRect {
     let squareSide = min(size.width, size.height)
     let vertical = size.height > size.width
@@ -60,57 +60,55 @@ extension UIColor {
    'gradient' of colour values between `beginColor` and `endColor`
    */
   final class func colorRange(beginColor: UIColor, endColor: UIColor, count: Int) -> [UIColor] {
-    
+
     guard count > 1 else {
       return [beginColor]
     }
-    
+
     var count = count - 1
-    
+
     var br: CGFloat = 0
     var bg: CGFloat = 0
     var bb: CGFloat = 0
     var ba: CGFloat = 0
-    
+
     beginColor.getRed(&br, green: &bg, blue: &bb, alpha: &ba)
-    
+
     var er: CGFloat = 0
     var eg: CGFloat = 0
     var eb: CGFloat = 0
     var ea: CGFloat = 0
-    
+
     endColor.getRed(&er, green: &eg, blue: &eb, alpha: &ea)
-    
+
     var result: [UIColor] = []
-    
+
     for index in 0...count {
-      
-      
+
         func component(begin: CGFloat, end: CGFloat, index: Int) -> CGFloat {
           return begin - (begin - end) / CGFloat(count) * CGFloat(index)
         }
-        
+
         let red = component(begin: br, end: er, index: index)
         let green = component(begin: bg, end: eg, index: index)
         let blue = component(begin: bb, end: eb, index: index)
         let alpha = component(begin: ba, end: ea, index: index)
-        
+
         let color = UIColor(red:red, green:green, blue:blue, alpha:alpha)
-        
+
         result.append(color)
-        
 
     }
-    
+
     return result
   }
-  
+
   func desaturated() -> UIColor {
     var components = self.getHSBComponents()
     components.s = 0
     return UIColor.fromHSBComponents(components)
   }
-  
+
   func getHSBComponents() -> HSBComponents {
     var components = HSBComponents(h: 0, s: 0, b: 0, a: 0)
     self.getHue(
@@ -121,7 +119,7 @@ extension UIColor {
     )
     return components
   }
-  
+
   static func fromHSBComponents(_ components: HSBComponents) -> UIColor {
     return UIColor(
       hue: components.h,
@@ -145,15 +143,15 @@ extension NSCoder {
     self.encode(floatFromComponent(ref.components, index: 2), forKey: "\(key)_blue")
     self.encode(floatFromComponent(ref.components, index: 3), forKey: "\(key)_alpha")
   }
-  
+
   func floatFromComponent(_ components: [CGFloat]?, index: Int) -> Float {
     guard let component = components?[index], index < 4 else {
       return 0
     }
-    
+
     return Float(component)
   }
-  
+
   /**
    Decodes and returns a `CGColorRef` whose four color components were
    previously encoded under keys derived from the given `key` such as red
@@ -166,7 +164,7 @@ extension NSCoder {
     let green = CGFloat(self.decodeFloat(forKey: "\(key)_green"))
     let blue = CGFloat(self.decodeFloat(forKey: "\(key)_blue"))
     let alpha = CGFloat(self.decodeFloat(forKey: "\(key)_alpha"))
-    
+
     return UIColor(red: red, green: green, blue: blue, alpha: alpha).cgColor
   }
 }

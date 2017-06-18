@@ -33,16 +33,16 @@ public protocol ChartDataSource {
 }
 
 extension ChartDataSource {
-  
-  //MARK: - Item Helpers
-  
+
+  // MARK: - Item Helpers
+
   /**
    Utility function that returns count of items
    */
   public func numberOfItems() -> Int {
     return segments.count
   }
-  
+
   /**
    Utitlity function that return sthe item at a given index
    
@@ -57,7 +57,7 @@ extension ChartDataSource {
     }
     return segments[index]
   }
-  
+
   /**
    Utility function that returns the index of a given item
    
@@ -73,7 +73,7 @@ extension ChartDataSource {
     }
     return index
   }
-  
+
   /**
    Utility function that returns the total value of all segments added up
    */
@@ -83,23 +83,23 @@ extension ChartDataSource {
     }
     return value
   }
-  
+
   /**
    Utility function that returns the value represented by a full circle
    */
   public func maxValue() -> Double {
     return max(totalValue(), maxValue)
   }
-  
+
   /**
    Utility function that checks whether segments fill the whole chart
    */
   public func isFullCircle() -> Bool {
     return maxValue <= totalValue()
   }
-  
-  //MARK: - Data Manipulation
-  
+
+  // MARK: - Data Manipulation
+
   /**
    Removes item at a given index and returns it
    
@@ -109,12 +109,12 @@ extension ChartDataSource {
    */
   @discardableResult
   public mutating func remove(at index: Int) -> ChartSegment? {
-    guard let _ = item(at: index) else {
+    guard item(at: index) != nil else {
       return nil
     }
     return segments.remove(at: index)
   }
-  
+
   /**
    Inserts an item at a given index
    
@@ -125,10 +125,10 @@ extension ChartDataSource {
     guard index <= segments.count else {
       return
     }
-    
+
     segments.insert(item, at: index)
   }
-  
+
   /**
    Appends an item at the end of `segments`
    
@@ -137,7 +137,7 @@ extension ChartDataSource {
   public mutating func append(_ item: ChartSegment) {
     segments.append(item)
   }
-  
+
   /**
    Empties `segments` by removing all items.
    */
@@ -146,9 +146,9 @@ extension ChartDataSource {
       remove(at: 0)
     }
   }
-  
-  //MARK: - Public Angle Helpers
-  
+
+  // MARK: - Public Angle Helpers
+
   /**
    Utility function for retrieving the end angle of the last segment
    
@@ -157,9 +157,9 @@ extension ChartDataSource {
   public func endAngle() -> CGFloat {
     return endAngle(for: numberOfItems() - 1)
   }
-  
-  //MARK: - Angle Helpers
-  
+
+  // MARK: - Angle Helpers
+
   /**
    Checks start angle of a segment at a given index by adding up end angle values of all previous segments
    
@@ -168,18 +168,18 @@ extension ChartDataSource {
    - returns: CGFloat start angle of the segment or 0 if no segment found
    */
   func startAngle(for index: Int) -> CGFloat {
-    guard let _ = item(at: index), maxValue() > 0 else {
+    guard item(at: index) != nil, maxValue() > 0 else {
       return 0
     }
-    
+
     let slice = segments[0..<min(segments.count, index)]
     let angle = slice.enumerated().reduce(0) { (sum, next) -> CGFloat in
       return sum + arcAngle(for: next.0)
     }
-    
+
     return angle
   }
-  
+
   /**
    Checks the end angle of a segment at a given `index` in `segments`
    
@@ -190,7 +190,7 @@ extension ChartDataSource {
   func endAngle(for index: Int) -> CGFloat {
     return startAngle(for: index) + arcAngle(for: index)
   }
-  
+
   /**
    Checks for the arc angle of a segment at a given `index` in `segments`
    

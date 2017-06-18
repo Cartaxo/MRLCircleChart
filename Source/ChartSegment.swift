@@ -32,17 +32,17 @@ import Foundation
  property, and `Equatable` on both `value` and `description properties.
  */
 public struct ChartSegment: Comparable {
-  
+
   /**
    Value that the instance represents
    */
   public var value: Double
-  
+
   /**
    String description to accompany the `ChartSegment's value
    */
   public var valueDescription: String
-  
+
   /**
    Default initializer for `ChartSegment`, returns a fully configured
    instance.
