@@ -4,7 +4,6 @@
 [![Platform](https://img.shields.io/cocoapods/p/MRLCircleChart.svg?style=flat)](http://cocoapods.org/pods/MRLCircleChart)
 [![Version](https://img.shields.io/cocoapods/v/MRLCircleChart.svg?style=flat)](http://cocoapods.org/pods/MRLCircleChart)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![Stories in Ready](https://badge.waffle.io/mlisik/MRLCircleChart.png?label=ready&title=Ready)](https://waffle.io/mlisik/MRLCircleChart)
 [![License](https://img.shields.io/cocoapods/l/MRLCircleChart.svg?style=flat)](http://cocoapods.org/pods/MRLCircleChart)
 
 ![Animated .gif of chart reloading it's data](https://raw.githubusercontent.com/mlisik/MRLCircleChart/master/Screenshots/mrlcirclechart.gif?raw=true "Reloading chart data")
@@ -105,11 +104,7 @@ pod "MRLCircleChart"
 ```
 ## Collaboration
 
-If you'd like to help out, check open tickets on [waffle.io](https://waffle.io/mlisik/MRLCircleChart). There's no roadmap for the project yet, but pull requests are welcome (whether you want to clean up, fix or add something), and so are feature requests.
-
-## Author
-
-mlisik, marek.lisik@holdapp.pl
+There's no roadmap for the project and it is not actively maintained, but pull requests are welcome (whether you want to clean up, fix or add something), and so are feature requests.
 
 ## License
 
