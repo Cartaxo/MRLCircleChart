@@ -27,7 +27,8 @@ DerivedData
 Carthage
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -115,3 +116,6 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
+
+# Examples
+Example/Pods
