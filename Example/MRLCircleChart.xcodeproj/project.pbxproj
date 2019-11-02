@@ -12,11 +12,11 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		6D12906B1D99CFFA00A6004F /* UIColorRangeTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1290691D99CF4500A6004F /* UIColorRangeTestCase.swift */; };
-		6DCFFF411D97D3A70000C879 /* ChartViewSnapshotTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D78064D1D71B1C70030F545 /* ChartViewSnapshotTestCase.swift */; };
-		6DDB09871D9D8C25001EA534 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDB09861D9D8C25001EA534 /* main.swift */; };
-		A14A243185E5333DF4300C80 /* Pods_MRLCircleChart_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBA082CA3BCFC7A6AAA7A9C /* Pods_MRLCircleChart_Example.framework */; };
-		F6A95E7BE0E185651D0F5D83 /* Pods_MRLCircleChart_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF477D43C6F8674502F410C /* Pods_MRLCircleChart_Tests.framework */; };
+		655B803296226ADAA91AD99F /* Pods_MRLCircleChart_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 259AD44E4C41E5439ACE60D4 /* Pods_MRLCircleChart_Example.framework */; };
+		6D2C5F88236DFB41006A13A8 /* UIColorRangeTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2C5F87236DFB41006A13A8 /* UIColorRangeTestCase.swift */; };
+		6D2C5F8B236DFB67006A13A8 /* ChartViewSnapshotTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2C5F8A236DFB67006A13A8 /* ChartViewSnapshotTestCase.swift */; };
+		6DE84060236DFD850078BBE1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE8405F236DFD850078BBE1 /* main.swift */; };
+		80B067AC86E9B44879BAAF10 /* Pods_MRLCircleChart_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 188B4DDF49E1C1CFAF659DEC /* Pods_MRLCircleChart_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +30,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		52FB9CBA5AC8C99D4F4C55CF /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		188B4DDF49E1C1CFAF659DEC /* Pods_MRLCircleChart_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MRLCircleChart_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		259AD44E4C41E5439ACE60D4 /* Pods_MRLCircleChart_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MRLCircleChart_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B440055310E9748C3F83962 /* Pods-MRLCircleChart_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRLCircleChart_Tests.debug.xcconfig"; path = "Target Support Files/Pods-MRLCircleChart_Tests/Pods-MRLCircleChart_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		479867DDB7A6F387F7D98603 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* MRLCircleChart_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MRLCircleChart_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,18 +43,14 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* MRLCircleChart_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MRLCircleChart_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		671CE3A4490754399FB8AFD3 /* Pods-MRLCircleChart_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRLCircleChart_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MRLCircleChart_Example/Pods-MRLCircleChart_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		6D1290691D99CF4500A6004F /* UIColorRangeTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorRangeTestCase.swift; sourceTree = "<group>"; };
-		6D78064C1D71B1C70030F545 /* MRLCircleChart_Tests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MRLCircleChart_Tests-Bridging-Header.h"; sourceTree = "<group>"; };
-		6D78064D1D71B1C70030F545 /* ChartViewSnapshotTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewSnapshotTestCase.swift; sourceTree = "<group>"; };
-		6DDB09861D9D8C25001EA534 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		99D787778701D1CC7237B620 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		AEBA082CA3BCFC7A6AAA7A9C /* Pods_MRLCircleChart_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MRLCircleChart_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B1B1E0D977895614BEC72AE9 /* Pods-MRLCircleChart_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRLCircleChart_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MRLCircleChart_Example/Pods-MRLCircleChart_Example.release.xcconfig"; sourceTree = "<group>"; };
-		CF23CC561D0B8C790F14AD48 /* Pods-MRLCircleChart_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRLCircleChart_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MRLCircleChart_Tests/Pods-MRLCircleChart_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		D539CB166F889A51EB09496F /* Pods-MRLCircleChart_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRLCircleChart_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MRLCircleChart_Tests/Pods-MRLCircleChart_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		E7B771EBB6E00A5E82B7D37F /* MRLCircleChart.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MRLCircleChart.podspec; path = ../MRLCircleChart.podspec; sourceTree = "<group>"; };
-		EEF477D43C6F8674502F410C /* Pods_MRLCircleChart_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MRLCircleChart_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D2C5F87236DFB41006A13A8 /* UIColorRangeTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorRangeTestCase.swift; sourceTree = "<group>"; };
+		6D2C5F8A236DFB67006A13A8 /* ChartViewSnapshotTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewSnapshotTestCase.swift; sourceTree = "<group>"; };
+		6DE8405F236DFD850078BBE1 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		ABA7E346B0ABEEE2654230E6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		AE527FB81D7CBFB158E179EF /* Pods-MRLCircleChart_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRLCircleChart_Example.release.xcconfig"; path = "Target Support Files/Pods-MRLCircleChart_Example/Pods-MRLCircleChart_Example.release.xcconfig"; sourceTree = "<group>"; };
+		CB05A3AE06B9280CD2F1C26F /* MRLCircleChart.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MRLCircleChart.podspec; path = ../MRLCircleChart.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D155281A6B78BDBC2829AC70 /* Pods-MRLCircleChart_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRLCircleChart_Tests.release.xcconfig"; path = "Target Support Files/Pods-MRLCircleChart_Tests/Pods-MRLCircleChart_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		D4F128F920CC52AE5DF4ACC8 /* Pods-MRLCircleChart_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRLCircleChart_Example.debug.xcconfig"; path = "Target Support Files/Pods-MRLCircleChart_Example/Pods-MRLCircleChart_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A14A243185E5333DF4300C80 /* Pods_MRLCircleChart_Example.framework in Frameworks */,
+				655B803296226ADAA91AD99F /* Pods_MRLCircleChart_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,18 +66,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6A95E7BE0E185651D0F5D83 /* Pods_MRLCircleChart_Tests.framework in Frameworks */,
+				80B067AC86E9B44879BAAF10 /* Pods_MRLCircleChart_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2D0B7CE03BE4E35E66380138 /* Frameworks */ = {
+		04E13FEB29C2EDCCA42E22C3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AEBA082CA3BCFC7A6AAA7A9C /* Pods_MRLCircleChart_Example.framework */,
-				EEF477D43C6F8674502F410C /* Pods_MRLCircleChart_Tests.framework */,
+				259AD44E4C41E5439ACE60D4 /* Pods_MRLCircleChart_Example.framework */,
+				188B4DDF49E1C1CFAF659DEC /* Pods_MRLCircleChart_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -90,12 +89,10 @@
 				607FACD21AFB9204008FA782 /* Example for MRLCircleChart */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
-				A87498AE88CA71C91AB4AEFB /* Pods */,
-				2D0B7CE03BE4E35E66380138 /* Frameworks */,
+				B4B00DBA20FD45B86794FDA6 /* Pods */,
+				04E13FEB29C2EDCCA42E22C3 /* Frameworks */,
 			);
-			indentWidth = 2;
 			sourceTree = "<group>";
-			tabWidth = 2;
 		};
 		607FACD11AFB9204008FA782 /* Products */ = {
 			isa = PBXGroup;
@@ -109,7 +106,7 @@
 		607FACD21AFB9204008FA782 /* Example for MRLCircleChart */ = {
 			isa = PBXGroup;
 			children = (
-				6DDB09861D9D8C25001EA534 /* main.swift */,
+				6DE8405F236DFD850078BBE1 /* main.swift */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -133,8 +130,8 @@
 			isa = PBXGroup;
 			children = (
 				607FACE91AFB9204008FA782 /* Supporting Files */,
-				6D7F0C9A1D91D286005A6385 /* Snapshot Tests */,
-				6D1290691D99CF4500A6004F /* UIColorRangeTestCase.swift */,
+				6D2C5F89236DFB4E006A13A8 /* Snapshot Tests */,
+				6D2C5F87236DFB41006A13A8 /* UIColorRangeTestCase.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -142,7 +139,6 @@
 		607FACE91AFB9204008FA782 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6D78064C1D71B1C70030F545 /* MRLCircleChart_Tests-Bridging-Header.h */,
 				607FACEA1AFB9204008FA782 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -151,30 +147,30 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				E7B771EBB6E00A5E82B7D37F /* MRLCircleChart.podspec */,
-				99D787778701D1CC7237B620 /* README.md */,
-				52FB9CBA5AC8C99D4F4C55CF /* LICENSE */,
+				CB05A3AE06B9280CD2F1C26F /* MRLCircleChart.podspec */,
+				ABA7E346B0ABEEE2654230E6 /* README.md */,
+				479867DDB7A6F387F7D98603 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		6D7F0C9A1D91D286005A6385 /* Snapshot Tests */ = {
+		6D2C5F89236DFB4E006A13A8 /* Snapshot Tests */ = {
 			isa = PBXGroup;
 			children = (
-				6D78064D1D71B1C70030F545 /* ChartViewSnapshotTestCase.swift */,
+				6D2C5F8A236DFB67006A13A8 /* ChartViewSnapshotTestCase.swift */,
 			);
 			name = "Snapshot Tests";
 			sourceTree = "<group>";
 		};
-		A87498AE88CA71C91AB4AEFB /* Pods */ = {
+		B4B00DBA20FD45B86794FDA6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CF23CC561D0B8C790F14AD48 /* Pods-MRLCircleChart_Tests.debug.xcconfig */,
-				D539CB166F889A51EB09496F /* Pods-MRLCircleChart_Tests.release.xcconfig */,
-				671CE3A4490754399FB8AFD3 /* Pods-MRLCircleChart_Example.debug.xcconfig */,
-				B1B1E0D977895614BEC72AE9 /* Pods-MRLCircleChart_Example.release.xcconfig */,
+				D4F128F920CC52AE5DF4ACC8 /* Pods-MRLCircleChart_Example.debug.xcconfig */,
+				AE527FB81D7CBFB158E179EF /* Pods-MRLCircleChart_Example.release.xcconfig */,
+				3B440055310E9748C3F83962 /* Pods-MRLCircleChart_Tests.debug.xcconfig */,
+				D155281A6B78BDBC2829AC70 /* Pods-MRLCircleChart_Tests.release.xcconfig */,
 			);
-			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,12 +180,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "MRLCircleChart_Example" */;
 			buildPhases = (
-				9BD0777C8B4D08BC8C6B80CE /* [CP] Check Pods Manifest.lock */,
+				B87C90FFB1B2E8184CC6226E /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				D0D6A35400603CD260596BF5 /* [CP] Embed Pods Frameworks */,
-				3C26C2198BD8A32357EBC7EB /* [CP] Copy Pods Resources */,
+				07628FE0FAB23026EA74669A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -204,12 +199,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "MRLCircleChart_Tests" */;
 			buildPhases = (
-				0B5A1010411E1D3E13B3F55F /* [CP] Check Pods Manifest.lock */,
+				D71A2EDFB044DB029EB21180 /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				D208B0F28F23C9691F67EA1E /* [CP] Embed Pods Frameworks */,
-				8F78F35D797E2B589E519E40 /* [CP] Copy Pods Resources */,
+				3A0E0004A8474EEA40EEA1FB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -227,18 +221,17 @@
 		607FACC81AFB9204008FA782 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 0800;
-						ProvisioningStyle = Manual;
+						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
@@ -248,6 +241,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -283,94 +277,90 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0B5A1010411E1D3E13B3F55F /* [CP] Check Pods Manifest.lock */ = {
+		07628FE0FAB23026EA74669A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		3C26C2198BD8A32357EBC7EB /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MRLCircleChart_Example/Pods-MRLCircleChart_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8F78F35D797E2B589E519E40 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MRLCircleChart_Tests/Pods-MRLCircleChart_Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9BD0777C8B4D08BC8C6B80CE /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		D0D6A35400603CD260596BF5 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MRLCircleChart_Example/Pods-MRLCircleChart_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MRLCircleChart/MRLCircleChart.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MRLCircleChart.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MRLCircleChart_Example/Pods-MRLCircleChart_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MRLCircleChart_Example/Pods-MRLCircleChart_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D208B0F28F23C9691F67EA1E /* [CP] Embed Pods Frameworks */ = {
+		3A0E0004A8474EEA40EEA1FB /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MRLCircleChart_Tests/Pods-MRLCircleChart_Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FBSnapshotTestCase/FBSnapshotTestCase.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble-Snapshots/Nimble_Snapshots.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSnapshotTestCase.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble_Snapshots.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MRLCircleChart_Tests/Pods-MRLCircleChart_Tests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MRLCircleChart_Tests/Pods-MRLCircleChart_Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B87C90FFB1B2E8184CC6226E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MRLCircleChart_Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D71A2EDFB044DB029EB21180 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MRLCircleChart_Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -382,7 +372,7 @@
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
-				6DDB09871D9D8C25001EA534 /* main.swift in Sources */,
+				6DE84060236DFD850078BBE1 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,8 +380,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DCFFF411D97D3A70000C879 /* ChartViewSnapshotTestCase.swift in Sources */,
-				6D12906B1D99CFFA00A6004F /* UIColorRangeTestCase.swift in Sources */,
+				6D2C5F88236DFB41006A13A8 /* UIColorRangeTestCase.swift in Sources */,
+				6D2C5F8B236DFB67006A13A8 /* ChartViewSnapshotTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,14 +423,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -464,7 +460,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -480,14 +476,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -504,7 +506,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -514,44 +516,40 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 671CE3A4490754399FB8AFD3 /* Pods-MRLCircleChart_Example.debug.xcconfig */;
+			baseConfigurationReference = D4F128F920CC52AE5DF4ACC8 /* Pods-MRLCircleChart_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MRLCircleChart/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B1B1E0D977895614BEC72AE9 /* Pods-MRLCircleChart_Example.release.xcconfig */;
+			baseConfigurationReference = AE527FB81D7CBFB158E179EF /* Pods-MRLCircleChart_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MRLCircleChart/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF23CC561D0B8C790F14AD48 /* Pods-MRLCircleChart_Tests.debug.xcconfig */;
+			baseConfigurationReference = 3B440055310E9748C3F83962 /* Pods-MRLCircleChart_Tests.debug.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -562,29 +560,26 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Tests/MRLCircleChart_Tests-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MRLCircleChart_Example.app/MRLCircleChart_Example";
 			};
 			name = Debug;
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D539CB166F889A51EB09496F /* Pods-MRLCircleChart_Tests.release.xcconfig */;
+			baseConfigurationReference = D155281A6B78BDBC2829AC70 /* Pods-MRLCircleChart_Tests.release.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Tests/MRLCircleChart_Tests-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MRLCircleChart_Example.app/MRLCircleChart_Example";
 			};
 			name = Release;
