@@ -22,11 +22,11 @@ struct Configuration {
 
 protocol SnapshotSpec {
   var recordMode: Bool { get set }
-  func testSnapshot() -> MatcherFunc<Snapshotable>
+  func testSnapshot() -> Predicate<Snapshotable>
 }
 
 extension SnapshotSpec {
-  func testSnapshot() -> MatcherFunc<Snapshotable> {
+  func testSnapshot() -> Predicate<Snapshotable> {
     switch recordMode {
     case false: return haveValidSnapshot(named: nil, usesDrawRect: false, tolerance: 1)
     case true: return recordSnapshot()
