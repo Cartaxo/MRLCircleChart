@@ -182,7 +182,7 @@ class ChartSegmentLayer: CALayer {
   func animation(_ key: String, toValue: AnyObject?, fromValue: AnyObject) -> CABasicAnimation {
     let animation = CABasicAnimation(keyPath: key)
     animation.duration = animationDuration
-    animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+    animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
     animation.toValue = toValue
     animation.fromValue = fromValue
 
